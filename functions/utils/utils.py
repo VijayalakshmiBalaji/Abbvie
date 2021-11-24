@@ -180,3 +180,26 @@ def condition1(
     result = operator_dict[operation](data, check_value)
 
     return result
+
+def nullcheck(data: ComparisonData,
+        columnlist: list,
+        dtype: str = None,
+        date_format: str= None):
+    
+    boollist=[]
+    """ Performs nullcheck
+    :param data: List of values (python list or np.ndarray) or value to search
+    :type data: ComparisonData
+    :param columnlist: List of columns within dataset
+    :type columnlist: list
+    """ 
+    try:
+        for i in range(len(columnlist)):
+            if data[columnlist[i]].isnull().values.any():
+                boollist.append(False)
+            else:
+                boollist.append(True)
+            
+        return boollist
+    except:
+        ValueError('Must be correct dtype')
