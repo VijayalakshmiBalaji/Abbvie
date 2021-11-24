@@ -1,0 +1,17 @@
+name: condition
+inputs:
+        - df:
+                type:
+                        - DataFrame
+                        - dict
+        - column:
+                type: str
+        - operation:
+                type: str
+        - check_value:
+                type: Any
+output:
+        type: list(bool)
+categories:
+        - single_dataset
+        - general

@@ -2,7 +2,7 @@ from functions.utils.dtypes import InputData
 from functions.utils import utils
 from typing import Any
 
-def condition(
+def condition1(
         data: InputData, 
         column: str, 
         operation: str, 
@@ -22,6 +22,6 @@ def condition(
     """
 
     # Perform check
-    result = utils.condition(data[column], operation, check_value)
+    result = utils.condition1(data[column], operation, check_value)
 
     return result
